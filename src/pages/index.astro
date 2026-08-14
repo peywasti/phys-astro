@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 
 const domain = "phys.ir";
-const email = "admin@phys.ir";
 ---
 
 <Layout
@@ -39,47 +38,6 @@ const email = "admin@phys.ir";
       </div>
     </section>
 
-    <!-- Features / Why buy -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Why this domain?</h2>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3 class="feature-title">Short & Memorable</h3>
-            <p class="feature-desc">
-              Only 4 letters. Easy to remember, type, and share across any
-              platform.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🎯</div>
-            <h3 class="feature-title">Highly Brandable</h3>
-            <p class="feature-desc">
-              "Phys" is instantly recognizable — perfect for physics, health,
-              fitness, or tech brands.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🇮🇷</div>
-            <h3 class="feature-title">Established TLD</h3>
-            <p class="feature-desc">
-              The .ir extension is trusted and widely recognized for businesses
-              and projects in Iran.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🚀</div>
-            <h3 class="feature-title">SEO Advantage</h3>
-            <p class="feature-desc">
-              A concise keyword-rich domain that can boost visibility and
-              click-through rates.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Contact -->
     <section id="contact" class="section contact-section">
       <div class="container">
@@ -88,12 +46,9 @@ const email = "admin@phys.ir";
           <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">
             Serious inquiries only. Send your best offer.
           </p>
-          <a href={`mailto:${email}`} class="contact-email">{email}</a>
+          <a id="email-link" href="#" class="contact-email">Send us an email</a>
           <div style="margin-top: 2rem;">
-            <a
-              href={`mailto:${email}?subject=Offer%20for%20${domain}`}
-              class="cta-button"
-            >
+            <a id="email-cta" href="#" class="cta-button">
               <span>Email Us Now</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -120,4 +75,21 @@ const email = "admin@phys.ir";
       <p>© {new Date().getFullYear()} {domain} — All rights reserved.</p>
     </div>
   </footer>
+
+  <script is:inline>
+    (function () {
+      const email = atob("YWJiYXN6YWRlaEBnbWFpbC5jb20=");
+      const subject = "Offer for phys.ir";
+      const link = document.getElementById("email-link");
+      const cta = document.getElementById("email-cta");
+      if (link) {
+        link.href = "mailto:" + email;
+        link.textContent = email;
+      }
+      if (cta) {
+        cta.href =
+          "mailto:" + email + "?subject=" + encodeURIComponent(subject);
+      }
+    })();
+  </script>
 </Layout>
