@@ -1,17 +1,123 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
 
+const domain = "phys.ir";
+const email = "admin@phys.ir";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title={`${domain} — Domain For Sale`}
+  description={`The premium domain ${domain} is available for purchase. Short, memorable, and brandable. Make an offer today.`}
+>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="domain-name animate-in">
+          phys<span class="domain-tld">.ir</span>
+        </h1>
+        <div class="divider animate-in delay-1"></div>
+        <p class="tagline animate-in delay-2">
+          This premium domain is available for sale
+        </p>
+        <a href="#contact" class="cta-button animate-in delay-3">
+          <span>Make an Offer</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
+          >
+        </a>
+      </div>
+    </section>
+
+    <!-- Features / Why buy -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Why this domain?</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3 class="feature-title">Short & Memorable</h3>
+            <p class="feature-desc">
+              Only 4 letters. Easy to remember, type, and share across any
+              platform.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3 class="feature-title">Highly Brandable</h3>
+            <p class="feature-desc">
+              "Phys" is instantly recognizable — perfect for physics, health,
+              fitness, or tech brands.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🇮🇷</div>
+            <h3 class="feature-title">Established TLD</h3>
+            <p class="feature-desc">
+              The .ir extension is trusted and widely recognized for businesses
+              and projects in Iran.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3 class="feature-title">SEO Advantage</h3>
+            <p class="feature-desc">
+              A concise keyword-rich domain that can boost visibility and
+              click-through rates.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <h2 class="section-title">Interested?</h2>
+        <div class="contact-box">
+          <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">
+            Serious inquiries only. Send your best offer.
+          </p>
+          <a href={`mailto:${email}`} class="contact-email">{email}</a>
+          <div style="margin-top: 2rem;">
+            <a
+              href={`mailto:${email}?subject=Offer%20for%20${domain}`}
+              class="cta-button"
+            >
+              <span>Email Us Now</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><rect width="20" height="16" x="2" y="4" rx="2"></rect><path
+                  d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© {new Date().getFullYear()} {domain} — All rights reserved.</p>
+    </div>
+  </footer>
+</Layout>
